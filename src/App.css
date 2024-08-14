@@ -1,38 +1,72 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh;
+  background-color: #282c34;
 }
 
-.App-link {
-  color: #61dafb;
+.calculator {
+  background-color: whitesmoke;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  width: 320px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.display {
+  font-size: 2.5em;
+  height: 55px;
+  background-color: #333;
+  color: whitesmoke;
+  text-align: right;
+  padding: 20px;
+  border: #111;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.keypad button {
+  font-size: 1.5em;
+  padding: 20px;
+  background-color: lightslategray;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.keypad button:hover {
+  background-color: darkslategray;
+  color: whitesmoke;
+}
+
+.keypad button:nth-child(17) {
+  grid-column: span 2; /* Gör knappen "0" bredare */
+}
+
+.keypad button:nth-child(18) {
+  grid-column: span 2; /* Gör knappen "=" bredare */
+}
+
+.keypad button:last-child {
+  grid-column: span 4; /* Gör knappen "C" bredare */
+  background-color: darkred;
+  color: whitesmoke;
+  border: 5px solid darkred;
+  font-weight: bold;
+}
+
+.keypad button:last-child:hover {
+  grid-column: span 4; /* Gör knappen "C" bredare */
+  background-color: whitesmoke;
+  color: darkred;
+  
 }
